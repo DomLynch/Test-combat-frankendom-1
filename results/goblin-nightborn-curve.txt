@@ -1,0 +1,18 @@
+
+goblin: win% by ladder level (60 fights per cell)
+level       masher   blocker   skilled
+1              95%      100%      100%
+6              27%      100%       97%
+12             28%      100%       87%
+18             10%       98%       80%
+32             15%      100%       83%
+46             15%       98%       87%
+
+nightborn: win% by ladder level (60 fights per cell)
+level       masher   blocker   skilled
+1             100%      100%      100%
+6               2%       72%       48%
+12              0%       48%       15%
+18              0%       30%        8%
+32              0%       13%        5%
+46              0%        7%        2%

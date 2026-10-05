@@ -1,0 +1,39 @@
+
+=== ladder level 6 (1 Recruit, 6 easy, 18 normal, 46 Origin) · 30 fights per cell · win% / mean seconds ===
+opponent              masher       blocker       skilled
+veteran              73% 26s      100% 24s      100% 23s
+pitborn              70% 32s       83% 35s       77% 39s
+goblin               27% 33s      100% 20s      100% 34s
+nightborn             0% 21s       57% 31s       30% 31s
+executioner          77% 23s      100% 26s      100% 24s
+dwarf                33% 33s      100% 29s       83% 31s
+plaguedoctor          0% 22s       57% 31s       30% 31s
+knight               70% 30s       87% 27s       87% 31s
+witch                 0% 23s      100% 24s       77% 32s
+shieldmaiden         60% 32s       97% 34s      100% 37s
+
+=== ladder level 18 (1 Recruit, 6 easy, 18 normal, 46 Origin) · 30 fights per cell · win% / mean seconds ===
+opponent              masher       blocker       skilled
+veteran               0% 17s       23% 33s        0% 31s
+pitborn               0% 14s        0% 25s        0% 25s
+goblin               17% 52s      100% 42s       90% 50s
+nightborn             0% 16s       23% 25s       10% 26s
+executioner           0% 18s       10% 26s       13% 27s
+dwarf                 0% 21s       60% 38s       40% 41s
+plaguedoctor          0% 15s       20% 25s        7% 25s
+knight                3% 15s        3% 23s        3% 21s
+witch                 0% 18s       77% 32s       50% 36s
+shieldmaiden          0% 15s       10% 49s        3% 40s
+
+=== ladder level 46 (1 Recruit, 6 easy, 18 normal, 46 Origin) · 30 fights per cell · win% / mean seconds ===
+opponent              masher       blocker       skilled
+veteran               0% 14s       37% 39s       10% 40s
+pitborn               0% 13s        0% 28s        3% 26s
+goblin               17% 64s      100% 51s       93% 62s
+nightborn             0% 12s        7% 24s        3% 23s
+executioner           0% 16s       20% 26s       10% 24s
+dwarf                 0% 21s       50% 40s       43% 43s
+plaguedoctor          0% 12s        7% 24s        3% 23s
+knight                0% 15s        3% 24s        0% 22s
+witch                 0% 16s       67% 33s       37% 38s
+shieldmaiden          0% 14s       17% 45s        3% 43s

@@ -1,0 +1,29 @@
+dwarf: win% by ladder level (40 fights per cell)
+level       masher   blocker   skilled
+10             28%      100%       80%
+11             13%      100%       73%
+12              5%       53%       25%
+13              0%       33%       28%
+14              0%       57%       43%
+15              0%       53%       33%
+18              0%       57%       45%
+
+knight: win% by ladder level (40 fights per cell)
+level       masher   blocker   skilled
+10             68%       73%       38%
+11             53%       75%       60%
+12             10%       13%       13%
+13             13%       10%       13%
+14              8%       13%        5%
+15              0%       10%        3%
+18              0%        3%        5%
+
+shieldmaiden: win% by ladder level (40 fights per cell)
+level       masher   blocker   skilled
+10             50%       95%       93%
+11             40%       90%       83%
+12             45%       88%       85%
+13             35%       83%       85%
+14              0%       23%       20%
+15              0%       13%       10%
+18              0%       10%        3%

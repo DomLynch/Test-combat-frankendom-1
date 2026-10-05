@@ -1,0 +1,36 @@
+
+veteran: win% by ladder level (60 fights per cell)
+level       masher   blocker   skilled
+10             63%      100%       95%
+11             62%       97%       92%
+12              5%       35%        8%
+13              0%       28%       12%
+14              8%       28%       13%
+15              3%       20%       12%
+16              5%       30%       15%
+17              0%       27%        7%
+18              0%       27%        2%
+
+pitborn: win% by ladder level (60 fights per cell)
+level       masher   blocker   skilled
+10             48%       67%       73%
+11             60%       75%       67%
+12             45%       62%       63%
+13             45%       57%       48%
+14              2%        5%        8%
+15              5%        7%        3%
+16              7%        8%       13%
+17              0%        0%        2%
+18              0%        0%        2%
+
+executioner: win% by ladder level (60 fights per cell)
+level       masher   blocker   skilled
+10             68%       98%       88%
+11             77%       93%       80%
+12              5%       37%       25%
+13              8%       23%       18%
+14             13%       27%       23%
+15              8%       25%       22%
+16             10%       30%       12%
+17              3%       18%       13%
+18              7%       17%       17%

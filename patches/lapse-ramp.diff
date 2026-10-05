@@ -1,0 +1,32 @@
+diff --git a/src/moves.ts b/src/moves.ts
+index 8e6a1ec..1f1a944 100644
+--- a/src/moves.ts
++++ b/src/moves.ts
+@@ -758,7 +758,26 @@ export function profileAt(o: Opponent, level: number): AiProfile {
+   const [from, to, a, b] = l < LEVEL_ANCHORS.easy ? [LEVEL_ANCHORS.novice, LEVEL_ANCHORS.easy, novice(o.profiles.easy), o.profiles.easy]
+     : l < LEVEL_ANCHORS.normal ? [LEVEL_ANCHORS.easy, LEVEL_ANCHORS.normal, o.profiles.easy, o.profiles.normal]
+     : [LEVEL_ANCHORS.normal, LEVEL_ANCHORS.hard, o.profiles.normal, o.profiles.hard];
+-  const profile = blend(a, b, (l - from) / (to - from));
++  const blended = blend(a, b, (l - from) / (to - from));
++  const profile = lapseRamp(o, l, blended);
+   levelCache.set(key, profile);
+   return profile;
+ }
++// The reaction cliff (Ladder sweep, 2026-10-04): a warden notices the PLAYER's swing `reaction` ticks after it starts, so while his reaction is at or above
++// the player's cut windup (20 ticks, the longsword's) he can never answer a cut, and one tick under it he answers nearly all of them. The blend moves reaction
++// about one tick a level, so at the level it first drops under the windup a bystander's win rate fell 60-95 % -> 5-15 % in one step (Veteran and
++// Executioner, L11 -> L12, six scripted strategies; L12 with L11's reaction restored it, L11 with L12's reproduced the fall). `lapse` is the chance a
++// noticed swing gets no answer, so that first level starts almost all lapse and eases to the blend's own value over LAPSE_RAMP levels. Only a warden whose
++// reaction crosses the windup between L7 and L17 has a cliff: those already under it at L6 (Goblin, Nightborn, Witch...) are untouched, and so are the
++// anchors and every level outside the ramp. Other player weapons have other windups; the longsword is the one the ladder is tuned on.
++export const LAPSE_RAMP = 7, LAPSE_START = .9;
++const lapseRamp = (o: Opponent, l: number, p: AiProfile): AiProfile => {
++  if (l <= LEVEL_ANCHORS.easy || l >= LEVEL_ANCHORS.normal) return p;
++  const windup = PATHS.light_right.windup;
++  const reactionAt = (k: number) => k === l ? p.reaction : blend(o.profiles.easy, o.profiles.normal, (k - LEVEL_ANCHORS.easy) / (LEVEL_ANCHORS.normal - LEVEL_ANCHORS.easy)).reaction;
++  let crossing = 0;   // the first level whose reaction is under the windup, the level before it still at or over
++  for (let k = LEVEL_ANCHORS.easy + 1; k < LEVEL_ANCHORS.normal && !crossing; k++) if (reactionAt(k) < windup && reactionAt(k - 1) >= windup) crossing = k;
++  if (!crossing || l < crossing || l - crossing >= LAPSE_RAMP) return p;
++  const lapse = Math.max(p.lapse, LAPSE_START - (LAPSE_START - p.lapse) * ((l - crossing + 1) / LAPSE_RAMP));
++  return { ...p, lapse: Math.round(lapse * 1000) / 1000 };
++};
