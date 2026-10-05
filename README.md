@@ -5,6 +5,8 @@ this repo holds experiments, measurements and learnings so the game repo stays c
 
 Everything was measured on game trunk **`4056467`** (the revision frankendom.com was serving on 2026-10-04/05).
 
+**Start with [`HANDOFF.md`](HANDOFF.md)**: what was done, the learnings, and the next actions for the dev.
+
 ## What is here
 
 | Path | What |
