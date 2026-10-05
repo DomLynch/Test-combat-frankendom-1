@@ -1,0 +1,55 @@
+
+veteran: win% by ladder level (60 fights per cell)
+level       masher   blocker
+1             100%      100%
+2              98%      100%
+3              88%      100%
+4              82%      100%
+5              50%      100%
+6              82%      100%
+7              78%       98%
+8              67%      100%
+
+goblin: win% by ladder level (60 fights per cell)
+level       masher   blocker
+1              95%      100%
+2              83%      100%
+3              75%      100%
+4              55%      100%
+5              30%      100%
+6              40%      100%
+7              23%      100%
+8              20%      100%
+
+nightborn: win% by ladder level (60 fights per cell)
+level       masher   blocker
+1             100%      100%
+2             100%      100%
+3              97%      100%
+4              72%      100%
+5              52%      100%
+6               3%       82%
+7               2%       65%
+8               0%       58%
+
+plaguedoctor: win% by ladder level (60 fights per cell)
+level       masher   blocker
+1             100%      100%
+2             100%      100%
+3              97%      100%
+4              77%      100%
+5              47%      100%
+6               2%       82%
+7               2%       65%
+8               0%       58%
+
+witch: win% by ladder level (60 fights per cell)
+level       masher   blocker
+1              88%      100%
+2              62%      100%
+3              47%      100%
+4              15%      100%
+5               2%      100%
+6               0%       95%
+7               0%       93%
+8               2%       98%
