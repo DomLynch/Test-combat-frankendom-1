@@ -14,6 +14,7 @@ Everything was measured on game trunk **`4056467`** (the revision frankendom.com
 | `docs/weapon-aware-fix-and-late-ladder.md` | **The complete cliff fix** (passes the repo's own tests, 7 files), the scythe explained, and the late ladder with Special Moves. |
 | `docs/followups-2026-10-05.md` | Results of the four follow-ups: other weapons (the cliff moves with the weapon), Plague Doctor / Witch, a second cliff at L5->L6, playtest and GPU kits. |
 | `docs/playtest-level-12.md` | A 15-minute human playtest protocol with a verified way to jump to any level. |
+| `docs/systems-overview.md` | A read-only overview of gear stats, finishers, the Pit and online duels/backend on trunk, with confirmed vs survey-only claims, trust gaps found, and a ranked list of what to test next. |
 | `docs/learnings.md` | How the combat rules and the ladder work (read from the code), what the live game looked like, how to run things in the cloud container, open questions. |
 | `scripts/ladder-sweep.mjs` | Scripted players vs the live opponents at any of the 46 ladder levels, headless, minutes per sweep. |
 | `lib/` | `game.mjs` loads the sim from a game checkout (`GAME_DIR`); `bots.mjs` has the scripted players and the fight runner. |
