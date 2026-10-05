@@ -11,7 +11,9 @@ Read `docs/ladder-reaction-cliff.md` first. If yes:
    Old kill links at levels 12-17 will replay differently: weigh that cost before bumping.
 3. Run `npm run test:all` (profile/record/snapshot changes are gated by it) and the strategy battery (`tests/battery.test.ts`).
 4. Re-run the sweep (`curve --opponents=veteran,pitborn,executioner --levels=10,...,18`) and compare with `results/curve-with-lapse-ramp-L10-18.txt`.
-5. Human playtest of L11 -> L14 before shipping: the bots say what a strategy can do, not how it feels. The ramp is tuned for the longsword's 20-tick cut.
+5. Human playtest of L11 -> L14 before shipping (`docs/playtest-level-12.md`): the bots say what a strategy can do, not how it feels.
+6. **The patch is longsword-shaped.** It uses the 20-tick cut, so it smooths the cliff for the longsword, gladius and estoc only. The cleaver, maul, trident and warhammer have theirs at L10 and the knife at L22
+   (`docs/followups-2026-10-05.md` §2). A complete fix has to know the player's weapon (a fight record carries it). Also unaddressed: a second cliff at **L5 -> L6** for the Nightborn and Plague Doctor (§3).
 If no: the finding stands as documentation; nothing to apply.
 
 ## 2. Optional: bring the sweep tool into the game repo

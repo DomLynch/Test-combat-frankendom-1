@@ -11,6 +11,8 @@ Everything was measured on game trunk **`4056467`** (the revision frankendom.com
 |---|---|
 | `docs/ladder-reaction-cliff.md` | The main finding and a verified-but-unapplied fix. Start here. |
 | `docs/incorporate-into-main.md` | **Checklist for taking this into the game repo**: what to decide, which tests the fix trips, in what order. |
+| `docs/followups-2026-10-05.md` | Results of the four follow-ups: other weapons (the cliff moves with the weapon), Plague Doctor / Witch, a second cliff at L5->L6, playtest and GPU kits. |
+| `docs/playtest-level-12.md` | A 15-minute human playtest protocol with a verified way to jump to any level. |
 | `docs/learnings.md` | How the combat rules and the ladder work (read from the code), what the live game looked like, how to run things in the cloud container, open questions. |
 | `scripts/ladder-sweep.mjs` | Scripted players vs the live opponents at any of the 46 ladder levels, headless, minutes per sweep. |
 | `lib/` | `game.mjs` loads the sim from a game checkout (`GAME_DIR`); `bots.mjs` has the scripted players and the fight runner. |
@@ -18,7 +20,7 @@ Everything was measured on game trunk **`4056467`** (the revision frankendom.com
 | `for-game-repo/` | The sweep script in its drop-in form for the game repo's `scripts/` folder (static imports, no `GAME_DIR`). |
 | `patches/lapse-ramp.diff` | The in-game version of the fix (`src/moves.ts`, +20 lines). Applies cleanly on `4056467`. Trips two repo checks, see the doc. |
 | `results/` | Raw tables behind the doc (shipped curve, curve with the fix, matrix at L6/L18/L46, per-opponent curves). |
-| `live-play/` | Playwright scripts that opened frankendom.com at 375 px in the cloud container. WIP, software-rendered (about 1.7 fps). |
+| `live-play/` | Playwright scripts for frankendom.com at 375 px. `measure-fps.mjs` is the real-GPU frame-rate test (run it on your Mac); the rest ran in the cloud container, software-rendered (about 2 fps). |
 | `screenshots/` | Four live frames (loading card, fight start, mid-fight, Crixus at about 45 %). |
 
 ## Run it

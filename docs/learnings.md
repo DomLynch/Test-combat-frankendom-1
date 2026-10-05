@@ -59,7 +59,7 @@ Viewed at 375 px wide in headless Chromium on 2026-10-04. These are one reviewer
 - **Test suite:** `npm ci` then `npm test` in the game repo: 1785 pass, 0 fail, 2 skipped on 4056467, about 2.5 minutes on 4 CPUs.
 - **Debug hook:** load the game with `?debug` and `globalThis.__view` exposes the live view; `?tier=<Rank>` pins a look; `?gfx=phone|full` forces the graphics tier.
 
-## 6. Open questions / next experiments
+## 6. Open questions / next experiments (2026-10-05: items 1, 3, 4 and 5 now have kits or results in `docs/followups-2026-10-05.md`)
 
 - Does L12 (and L14 for the Pitborn/Shieldmaiden) feel like a wall to a person? A short human playtest would settle it.
 - Is the Goblin's and the Witch's flat difficulty intended? Nothing gates it today.
