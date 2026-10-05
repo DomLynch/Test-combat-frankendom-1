@@ -3,7 +3,7 @@
 // ~250k ticks/s). Answers "how does difficulty move up the 46-level ladder, and is any opponent a wall or a pushover?" in minutes.
 //
 //   GAME_DIR=../RPG-game node scripts/ladder-sweep.mjs matrix [--n=40] [--levels=1,18] [--bots=masher,blocker,skilled]
-//   GAME_DIR=../RPG-game node scripts/ladder-sweep.mjs curve  [--n=60] [--opponents=veteran,pitborn] [--bots=...] [--levels=...] [--weapon=longsword]
+//   GAME_DIR=../RPG-game node scripts/ladder-sweep.mjs curve  [--n=60] [--opponents=veteran,pitborn] [--bots=...] [--levels=...] [--weapon=longsword] [--specials=off|naive|aware]
 //   GAME_DIR=../RPG-game node scripts/ladder-sweep.mjs weapons [--n=40] [--opponents=veteran] [--bots=masher,blocker] [--levels=6,10,...]   every player weapon, with its light-cut windup
 //
 // Recipes marked `hold: true` in the game's roster.ts are not in the game and are skipped unless --include-held is passed.
@@ -30,13 +30,13 @@ if (mode === 'matrix') {
     }
   }
 } else if (mode === 'curve') {
-  const weapon = arg('weapon', 'longsword');
+  const weapon = arg('weapon', 'longsword'), specials = arg('specials', 'off');   // specials: off | naive | aware (Special Moves are live from L16)
   const levels = list('levels', '1,6,10,11,12,13,14,16,18,24,32,46').map(Number);
   for (const id of list('opponents', 'veteran,pitborn,executioner,goblin')) {
     if (!OPPONENTS[id]) { console.error(`unknown opponent "${id}" (have ${Object.keys(OPPONENTS).join(', ')})`); process.exit(2); }
     console.log(`\n${id}: win% by ladder level (${n} fights per cell)`);
     console.log('level'.padEnd(8) + bots.map((b) => b.padStart(10)).join(''));
-    for (const level of levels) console.log(String(level).padEnd(8) + bots.map((b) => `${Math.round(100 * winRate(BOTS[b], id, level, n, { weapon }))}%`.padStart(10)).join(''));
+    for (const level of levels) console.log(String(level).padEnd(8) + bots.map((b) => `${Math.round(100 * winRate(BOTS[b], id, level, n, { weapon, specials }))}%`.padStart(10)).join(''));
   }
 } else if (mode === 'weapons') {
   const levels = list('levels', '6,8,10,11,12,13,14,16,18').map(Number);

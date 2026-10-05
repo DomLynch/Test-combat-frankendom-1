@@ -94,6 +94,19 @@ index e5722f4..2866663 100644
      throw Error(`Fight record: version ${v} is not supported for the ${opponent} from level ${r.from} (bump ${bump} changed that fight, so an older link would replay a different fight)`);
    if (n > MAX_RECORD_TICKS) throw Error(`Fight record: ${n} ticks is past the ${MAX_RECORD_TICKS}-tick limit`);
    if (bytes.length !== o + 6 * n) throw Error('Fight record: length does not match its tick count');
+diff --git a/tests/player-weapons.test.ts b/tests/player-weapons.test.ts
+index 89797c3..76deb4a 100644
+--- a/tests/player-weapons.test.ts
++++ b/tests/player-weapons.test.ts
+@@ -125,7 +125,7 @@ test('weapon flip: the record carries the weapon; an older record version is ref
+   // Version 20 joins them (2026-09-29, bump 21: Special Moves behind the record's own flag; REACH[21] is empty). A v20 stream has no flag byte.
+   const old = before21(20);
+   assert.deepEqual([unpackRecord(old).v, unpackRecord(old).specials], [20, undefined], 'a v20 stream (no specials byte) decodes, with no specials');
+-  assert.equal(RECORD_VERSION, 22);
++  assert.equal(RECORD_VERSION, 23);
+   const odd = new Uint8Array(packRecord({ ...record, ticks: 0, intents: [] })); odd[3 + 1 + 1 + 1 + 6 + 1] = 0x7a;   // the weapon's first byte → 'znife'
+   assert.throws(() => unpackRecord(odd), /unknown weapon/);
+ });
 diff --git a/tests/record-version-guard.test.ts b/tests/record-version-guard.test.ts
 index ca45372..794acb5 100644
 --- a/tests/record-version-guard.test.ts

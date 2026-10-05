@@ -3,18 +3,20 @@
 Measured on game trunk `4056467`. Re-run `scripts/ladder-sweep.mjs` against whatever trunk is by then before trusting any number here.
 Nothing below has been applied to the game. Order matters: decide first, then touch code.
 
-## 1. Decide: fix the L12 / L14 reaction cliff?  (Combat lane's call)
-Read `docs/ladder-reaction-cliff.md` first. If yes:
-1. Apply `patches/lapse-ramp.diff` to `src/moves.ts` (`git apply`; +20 lines; clean on `4056467`).
-2. It will fail two existing tests, by design: `tests/ladder-levels.test.ts` "between anchors every level is a blend: skill knobs move monotonically"
-   (needs an exemption for the lapse ramp) and the RECORD_VERSION guard (bump `RECORD_VERSION` in `src/record.ts` and update the decoder accept-list per the comments there).
-   Old kill links at levels 12-17 will replay differently: weigh that cost before bumping.
-3. Run `npm run test:all` (profile/record/snapshot changes are gated by it) and the strategy battery (`tests/battery.test.ts`).
-4. Re-run the sweep (`curve --opponents=veteran,pitborn,executioner --levels=10,...,18`) and compare with `results/curve-with-lapse-ramp-L10-18.txt`.
-5. Human playtest of L11 -> L14 before shipping (`docs/playtest-level-12.md`): the bots say what a strategy can do, not how it feels.
-6. **The patch is longsword-shaped.** It uses the 20-tick cut, so it smooths the cliff for the longsword, gladius and estoc only. The cleaver, maul, trident and warhammer have theirs at L10 and the knife at L22
-   (`docs/followups-2026-10-05.md` §2). A complete fix has to know the player's weapon (a fight record carries it). Also unaddressed: a second cliff at **L5 -> L6** for the Nightborn and Plague Doctor (§3).
+## 1. Decide: fix the reaction cliff?  (Combat lane's call)
+Read `docs/weapon-aware-fix-and-late-ladder.md` first (and `docs/ladder-reaction-cliff.md` for the finding). If yes:
+1. **Apply the complete patch** on trunk `4056467`: `git apply patches/weapon-aware-lapse-ramp.diff patches/weapon-aware-lapse-ramp-fixture.diff`.
+   It is 7 files (+48/-31): `src/ai.ts`, `src/moves.ts`, `src/record.ts`, three tests, and the regenerated replay fixture. It already bumps RECORD_VERSION to 23, declares REACH[23], re-pins the kill-link guard, and updates the two tests that pin the literal version.
+2. It has been verified on top of trunk: `eslint src`, `tsc -p tsconfig.tests.json`, `npm test` (1785 pass), `npm run test:slow` (237 pass, including the strategy battery). No existing balance test moves, because the tuned anchors are untouched.
+3. **The one real cost to weigh:** `REACH[23]` makes an older saved fight (record versions 18-22) unreadable for the nine wardens whose easy reaction is >= 20 (Veteran, Pitborn, Executioner, Dwarf, Knight, Shieldmaiden, plus the held Minotaur, Werewolf, Skeleton) on levels 7-17.
+   Every other saved fight keeps working. That is Dom's and Combat's decision.
+4. If trunk has moved: re-apply, then re-run `node scripts/browser-replay-check.mjs --write` and paste the digest the guard test prints into `SIM_DIGEST`.
+5. Re-run the sweep (`curve --opponents=veteran,pitborn,executioner,dwarf,knight,shieldmaiden --levels=10,...,18`) and compare with `results/curve-with-fix-L10-18.txt`.
+6. Human playtest of L11 to L14 before shipping (`docs/playtest-level-12.md`): the bots say what a strategy can do, not how it feels.
 If no: the finding stands as documentation; nothing to apply.
+
+**Not covered by the patch (each a design decision):** the knife's cliff at L22 (below the normal anchor; smoothing it would move the hard anchor), the L5 -> L6 cliff for the Nightborn and Plague Doctor (needs the novice reaction offset changed, which retunes L1-5),
+and residual steps for the estoc, trident and warhammer. See the doc for why.
 
 ## 2. Optional: bring the sweep tool into the game repo
 `for-game-repo/scripts/ladder-sweep.mjs` is the in-repo version (static imports from `../src`, no `GAME_DIR`). Drop it in `scripts/`; it complements

@@ -1,5 +1,7 @@
 # Proposal — the ladder's reaction cliff (and a Goblin that never scales)
 
+> **Superseded 2026-10-05:** the weapon-aware, test-passing version of the fix is in `docs/weapon-aware-fix-and-late-ladder.md` and `patches/weapon-aware-lapse-ramp.diff`. The patch described below is the first, longsword-only attempt.
+
 Status: **PROPOSAL, nothing in `src/` changes in this PR.** For the Combat lane, 2026-10-04. Evidence is from `scripts/ladder-sweep.mjs`, which runs scripted players on the headless simulation, so every number below is reproducible with the commands at the end.
 
 ## 1. What was found

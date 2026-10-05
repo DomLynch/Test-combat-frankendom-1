@@ -1,0 +1,70 @@
+
+veteran: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             30%       17%
+26             17%        0%
+36             23%        3%
+46             20%        7%
+
+pitborn: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16              3%        7%
+26              0%        0%
+36              0%        0%
+46              0%        0%
+
+goblin: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             93%       97%
+26             90%       80%
+36             90%       60%
+46             93%       60%
+
+nightborn: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             40%       13%
+26              7%        0%
+36             13%        0%
+46              0%        3%
+
+executioner: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             33%       17%
+26              0%        3%
+36             10%        0%
+46              0%        3%
+
+dwarf: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             47%       30%
+26             40%       23%
+36             30%       20%
+46             33%       23%
+
+plaguedoctor: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             23%        3%
+26             10%        0%
+36             17%        0%
+46              0%        3%
+
+knight: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             13%       10%
+26              3%        0%
+36              0%        3%
+46              0%        0%
+
+witch: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             70%       63%
+26             63%       53%
+36             67%       57%
+46             60%       27%
+
+shieldmaiden: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             23%        7%
+26              7%        0%
+36             10%        3%
+46              3%        0%

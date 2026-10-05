@@ -1,0 +1,70 @@
+
+veteran: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             40%       30%
+26             27%        3%
+36             30%       10%
+46             23%        7%
+
+pitborn: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             10%        7%
+26              0%        0%
+36              0%        3%
+46              3%        0%
+
+goblin: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             97%      100%
+26             87%       83%
+36             80%       97%
+46             87%       77%
+
+nightborn: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             43%       13%
+26             30%       13%
+36             13%        3%
+46              3%        0%
+
+executioner: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             43%       23%
+26             10%       23%
+36             23%        3%
+46             13%        0%
+
+dwarf: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             53%       40%
+26             40%       37%
+36             40%       37%
+46             27%       40%
+
+plaguedoctor: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             30%        0%
+26             17%        7%
+36             17%        0%
+46              3%        0%
+
+knight: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             23%       10%
+26              3%        7%
+36              3%        7%
+46              0%        0%
+
+witch: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             80%       80%
+26             70%       83%
+36             70%       77%
+46             67%       37%
+
+shieldmaiden: win% by ladder level (30 fights per cell)
+level      blocker   skilled
+16             37%       20%
+26             20%       13%
+36             13%        7%
+46             17%        7%

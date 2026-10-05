@@ -1,0 +1,72 @@
+
+veteran: win% by ladder level (60 fights per cell)
+level       masher   blocker   skilled
+10             63%      100%       95%
+11             62%       97%       92%
+12             33%       78%       68%
+13             17%       75%       50%
+14             20%       60%       25%
+15              8%       40%       27%
+16              7%       48%       22%
+17              2%       43%       10%
+18              0%       27%        2%
+
+pitborn: win% by ladder level (60 fights per cell)
+level       masher   blocker   skilled
+10             48%       67%       73%
+11             60%       75%       67%
+12             45%       62%       63%
+13             45%       57%       48%
+14             18%       20%       33%
+15             20%       23%       18%
+16              7%       15%       12%
+17              0%        0%        0%
+18              0%        0%        2%
+
+executioner: win% by ladder level (60 fights per cell)
+level       masher   blocker   skilled
+10             68%       98%       88%
+11             77%       93%       80%
+12             40%       60%       65%
+13             23%       65%       47%
+14             35%       58%       45%
+15             17%       53%       40%
+16             18%       40%       23%
+17             12%       23%       23%
+18              7%       17%       17%
+
+dwarf: win% by ladder level (60 fights per cell)
+level       masher   blocker   skilled
+10             27%      100%       78%
+11             15%      100%       73%
+12              3%       85%       68%
+13              7%       77%       60%
+14              2%       72%       57%
+15              2%       72%       43%
+16              2%       67%       42%
+17              0%       57%       42%
+18              0%       57%       42%
+
+knight: win% by ladder level (60 fights per cell)
+level       masher   blocker   skilled
+10             60%       73%       40%
+11             53%       73%       60%
+12             27%       43%       33%
+13             28%       37%       28%
+14             12%       15%       18%
+15             10%       20%       12%
+16             13%       17%       13%
+17              2%        5%        3%
+18              2%        5%        3%
+
+shieldmaiden: win% by ladder level (60 fights per cell)
+level       masher   blocker   skilled
+10             47%       93%       93%
+11             48%       88%       85%
+12             42%       88%       83%
+13             40%       82%       85%
+14             23%       67%       47%
+15             12%       57%       43%
+16              8%       30%       22%
+17              0%       17%        3%
+18              0%       10%        3%
