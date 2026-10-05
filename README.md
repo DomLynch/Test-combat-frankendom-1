@@ -10,10 +10,12 @@ Everything was measured on game trunk **`4056467`** (the revision frankendom.com
 | Path | What |
 |---|---|
 | `docs/ladder-reaction-cliff.md` | The main finding and a verified-but-unapplied fix. Start here. |
+| `docs/incorporate-into-main.md` | **Checklist for taking this into the game repo**: what to decide, which tests the fix trips, in what order. |
 | `docs/learnings.md` | How the combat rules and the ladder work (read from the code), what the live game looked like, how to run things in the cloud container, open questions. |
 | `scripts/ladder-sweep.mjs` | Scripted players vs the live opponents at any of the 46 ladder levels, headless, minutes per sweep. |
 | `lib/` | `game.mjs` loads the sim from a game checkout (`GAME_DIR`); `bots.mjs` has the scripted players and the fight runner. |
 | `experiments/` | `reaction-cause.mjs` isolates why the cliff happens; `lapse-ramp-candidate.mjs` is the fix that works; `guard-ramp-candidate.mjs` is a fix that does not (kept so nobody re-tries it). |
+| `for-game-repo/` | The sweep script in its drop-in form for the game repo's `scripts/` folder (static imports, no `GAME_DIR`). |
 | `patches/lapse-ramp.diff` | The in-game version of the fix (`src/moves.ts`, +20 lines). Applies cleanly on `4056467`. Trips two repo checks, see the doc. |
 | `results/` | Raw tables behind the doc (shipped curve, curve with the fix, matrix at L6/L18/L46, per-opponent curves). |
 | `live-play/` | Playwright scripts that opened frankendom.com at 375 px in the cloud container. WIP, software-rendered (about 1.7 fps). |
